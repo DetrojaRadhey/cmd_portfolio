@@ -12,15 +12,6 @@ const portfolioInfo = {
   name: "Radhey Detroja, Software Engineer: Full-stack developer with extensive experience in building robust web applications using MERN stack technologies. Proficient in TypeScript, PostgreSQL, and WebSocket for creating dynamic and interactive user experiences. Good command of data structures and algorithms. Skilled in Git and GitHub for version control, project management, and collaborative development. Passionate about delivering high-quality, scalable solutions that meet client needs and industry standards.",
 }
 
-const asciiArt = `   
-██████╗  █████╗ ██████╗ ██╗  ██╗███████╗██╗   ██╗    ██████╗ ███████╗████████╗██████╗  ██████╗      ██╗ █████╗ 
-██╔══██╗██╔══██╗██╔══██╗██║  ██║██╔════╝╚██╗ ██╔╝    ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗     ██║██╔══██╗
-██████╔╝███████║██║  ██║███████║█████╗   ╚████╔╝     ██║  ██║█████╗     ██║   ██████╔╝██║   ██║     ██║███████║
-██╔══██╗██╔══██║██║  ██║██╔══██║██╔══╝    ╚██╔╝      ██║  ██║██╔══╝     ██║   ██╔══██╗██║   ██║██   ██║██╔══██║
-██║  ██║██║  ██║██████╔╝██║  ██║███████╗   ██║       ██████╔╝███████╗   ██║   ██║  ██║╚██████╔╝╚█████╔╝██║  ██║
-╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝       ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚═╝  ╚═╝
-`
-
 type HistoryItem = {
   text: string | string[];
   color: string;
@@ -136,7 +127,7 @@ function App() {
   return (
     <div className="terminal" onClick={handleTerminalClick}>
       <div className="terminal-output" ref={outputRef}>
-      <pre className="ascii-art">{asciiArt}</pre>
+      <img src={asciiArtImage} alt="ASCII Art" className="ascii-art-image" />
         {history.slice(1).map((item, index) => (
           <div key={index} className={`color-${item.color}`}>
             {Array.isArray(item.text) 
