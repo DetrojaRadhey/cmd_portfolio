@@ -6,34 +6,19 @@ import { getFormattedSkills } from './data/skills';
 import { getFormattedExperience } from './data/experience';
 import { getFormattedPing } from './data/ping';
 import { getFormattedProjects } from './data/projects';
+import asciiArtImage from './assets/asciiart.png';
 
 const portfolioInfo = {
   name: "Radhey Detroja, Software Engineer: Full-stack developer with extensive experience in building robust web applications using MERN stack technologies. Proficient in TypeScript, PostgreSQL, and WebSocket for creating dynamic and interactive user experiences. Good command of data structures and algorithms. Skilled in Git and GitHub for version control, project management, and collaborative development. Passionate about delivering high-quality, scalable solutions that meet client needs and industry standards.",
-  education: "Your Education",
-  experience: [
-    "Job Title 1 - Company 1 (Year - Year)",
-    "Job Title 2 - Company 2 (Year - Year)"
-  ],
-  skills: ["Skill 1", "Skill 2", "Skill 3"],
-  projects: [
-    "Project 1 - Description",
-    "Project 2 - Description"
-  ]
 }
 
-const asciiArt = `
-██████╗  █████╗ ██████╗ ██╗  ██╗███████╗██╗   ██╗    
-██╔══██╗██╔══██╗██╔══██╗██║  ██║██╔════╝╚██╗ ██╔╝    
-██████╔╝███████║██║  ██║███████║█████╗   ╚████╔╝     
-██╔══██╗██╔══██║██║  ██║██╔══██║██╔══╝    ╚██╔╝      
-██║  ██║██║  ██║██████╔╝██║  ██║███████╗   ██║       
-╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝       
-██████╗ ███████╗████████╗██████╗  ██████╗      ██╗ █████╗ 
-██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗     ██║██╔══██╗
-██║  ██║█████╗     ██║   ██████╔╝██║   ██║     ██║███████║
-██║  ██║██╔══╝     ██║   ██╔══██╗██║   ██║██   ██║██╔══██║
-██████╔╝███████╗   ██║   ██║  ██║╚██████╔╝╚█████╔╝██║  ██║
-╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚═╝  ╚═╝
+const asciiArt = `   
+██████╗  █████╗ ██████╗ ██╗  ██╗███████╗██╗   ██╗    ██████╗ ███████╗████████╗██████╗  ██████╗      ██╗ █████╗ 
+██╔══██╗██╔══██╗██╔══██╗██║  ██║██╔════╝╚██╗ ██╔╝    ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗     ██║██╔══██╗
+██████╔╝███████║██║  ██║███████║█████╗   ╚████╔╝     ██║  ██║█████╗     ██║   ██████╔╝██║   ██║     ██║███████║
+██╔══██╗██╔══██║██║  ██║██╔══██║██╔══╝    ╚██╔╝      ██║  ██║██╔══╝     ██║   ██╔══██╗██║   ██║██   ██║██╔══██║
+██║  ██║██║  ██║██████╔╝██║  ██║███████╗   ██║       ██████╔╝███████╗   ██║   ██║  ██║╚██████╔╝╚█████╔╝██║  ██║
+╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝       ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚═╝  ╚═╝
 `
 
 type HistoryItem = {
@@ -44,7 +29,7 @@ type HistoryItem = {
 
 function App() {
   const [history, setHistory] = useState<HistoryItem[]>([
-    { text: asciiArt, color: 'green' },
+    { text: '<img src="' + asciiArtImage + '" alt="ASCII Art" class="ascii-art-image" />', color: 'green' },
     { text: "Welcome to my portfolio! Type 'help' to see available commands.", color: 'blue' }
   ])
   const [input, setInput] = useState('')
@@ -55,8 +40,10 @@ function App() {
 
   useEffect(() => {
     if (clearScreen) {
-      setHistory([])
-      setHistory([{ text: asciiArt, color: 'green' }, { text: "Welcome to my portfolio! Type 'help' to see available commands.", color: 'blue' }])
+      setHistory([
+        { text: '<img src="' + asciiArtImage + '" alt="ASCII Art" class="ascii-art-image" />', color: 'green' },
+        { text: "Welcome to my portfolio! Type 'help' to see available commands.", color: 'blue' }
+      ]);
       setClearScreen(false)
     }
   }, [clearScreen])

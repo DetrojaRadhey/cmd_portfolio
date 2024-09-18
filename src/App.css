@@ -78,3 +78,9 @@ input {
 .terminal::-webkit-scrollbar-thumb:hover {
   background-color: #00cc00;
 }
+
+.ascii-art-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
